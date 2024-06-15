@@ -10,6 +10,7 @@ export default function PopularBusiness() {
 
 
 
+  const [BuisnessList, setBuisnessList] = useState([])
   const GetBusinessList = async () => {
     setBuisnessList([])
     try {
@@ -24,7 +25,6 @@ export default function PopularBusiness() {
     }
   };
 
-  const [BuisnessList, setBuisnessList] = useState([])
 
   useEffect(() => {
     GetBusinessList();
