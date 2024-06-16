@@ -6,7 +6,7 @@ import { db } from '../../configs/FirebaseConfig'; // Import the Firestore datab
 import { Colors } from '../../constants/Colors';
 import CategoryItem from './CategoryItem';
 
-export default function Category() {
+export default function Category({explore=false,onCategorySelect}) {
     const [categoryList, setCategoryList] = useState([])
     const router = useRouter();
 
@@ -29,10 +29,20 @@ export default function Category() {
         }
     }
 
+    const onCategoryPressHandler= (item)=>{
+        if(!explore){
+            router.push('/buisnesslist/'+item.name)
+        }
+        else{
+
+                onCategorySelect(item.name)
+        }
+    }
+
     return (
         <View>
 
-
+        {!explore &&
             <View style={{
                 padding: 20,
                 display: 'flex',
@@ -56,6 +66,7 @@ export default function Category() {
 
 
             </View>
+            }
 
             <FlatList
             data={categoryList}
@@ -66,8 +77,9 @@ export default function Category() {
             renderItem={({item, index})=>(
             <CategoryItem category = {item} 
             key={index}
-            onCategoryPress={(category)=>router.push('/buisnesslist/'+item.name)}
+            onCategoryPress={(category)=>onCategoryPressHandler(item )}
             />
+            // 
             )}
             />
         </View>

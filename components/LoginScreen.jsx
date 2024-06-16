@@ -5,12 +5,8 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useWarmUpBrowser } from "./../hooks/useWarmUpBrowser";
 
-
-
-
-
-
 WebBrowser.maybeCompleteAuthSession();
+
 export default function LoginScreen() {
   useWarmUpBrowser();
 
@@ -18,8 +14,7 @@ export default function LoginScreen() {
 
   const onPress = React.useCallback(async () => {
     try {
-      const { createdSessionId, signIn, signUp, setActive } =
-        await startOAuthFlow();
+      const { createdSessionId, signIn, signUp, setActive } = await startOAuthFlow();
 
       if (createdSessionId) {
         setActive({ session: createdSessionId });
@@ -34,45 +29,26 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={require('../assets/images/login.png')} style={styles.image} />
+        <Image source={require('../assets/images/loginpageimage.jpg')} style={styles.image} />
       </View>
 
       <View style={styles.subContainer}>
         <Text style={styles.mainText}>
           Your Ultimate
-          <Text style={styles.highlightedText}>Community Business Directory</Text>
+          <Text style={styles.highlightedText}> Community Business Directory </Text>
           App
         </Text>
 
-        <Text style={{
-          fontSize:15,
-          fontFamily:'outfit'  ,
-          textAlign:  'center',
-          marginVertical:15,
-          color:Colors.GREY
-          
-          }}>
-          Find your favorite buisness near you and post your own buisness
+        <Text style={styles.subText}>
+          Find your favorite business near you and post your own business
         </Text>
 
-        <TouchableOpacity style={{
-          backgroundColor:Colors.PRIMARY,
-          padding:16,
-          borderRadius:99,
-
-        }}
-        onPress={onPress}
-        >
-          <Text style={{
-            textAlign:'center',
-            color:'#fff',
-            fontFamily:'outfit'
-          }}>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+          <Text style={styles.buttonText}>
             Let's Get Started
           </Text>
         </TouchableOpacity>
       </View>
-
     </View>
   );
 }
@@ -83,36 +59,53 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFF',
+    paddingHorizontal: 20,
   },
   imageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    // backgroundColor: 'red',
     width: '100%',
     paddingVertical: 20,
   },
   image: {
     width: 220,
-    height: 420,
+    height: 380, // Adjusted height to be proportional and fit the screen better
     borderRadius: 20,
-    borderWidth: 5,
-    borderColor: '#000',
   },
   subContainer: {
-    backgroundColor: '#FFF',
-    padding: 20,
-    width: '90%',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop:-20
+    paddingVertical: 20,
   },
   mainText: {
-    fontSize: 30,
+    fontSize: 24,
     fontFamily: 'outfit-bold',
     textAlign: 'center',
-    flexWrap: 'wrap',
+    marginVertical: 10,
   },
   highlightedText: {
     color: Colors.PRIMARY,
+  },
+  subText: {
+    fontSize: 16,
+    fontFamily: 'outfit',
+    textAlign: 'center',
+    marginVertical: 15,
+    color: Colors.GREY,
+    paddingHorizontal: 20,
+  },
+  button: {
+    backgroundColor: Colors.PRIMARY,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 99,
+    marginTop: 20,
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#fff',
+    fontFamily: 'outfit',
+    fontSize: 16,
   },
 });

@@ -6,6 +6,10 @@ import BuisnessListCard from '../../components/BuisnessList/BuisnessListCard';
 import { db } from '../../configs/FirebaseConfig';
 import { Colors } from '../../constants/Colors';
 
+
+
+
+
 export default function BuisnessListByCategory() {
     const navigation = useNavigation();
     const { category } = useLocalSearchParams();

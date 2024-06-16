@@ -7,7 +7,6 @@ import { db } from '../../configs/FirebaseConfig';
 import { Colors } from '../../constants/Colors';
 
 export default function Review({ business }) {
-
     const [rating, setRating] = useState(4);
     const [userInput, setUserInput] = useState('');
     const { user } = useUser();
@@ -78,15 +77,16 @@ export default function Review({ business }) {
 
             {/* Display comments */}
             <View style={{ marginTop: 20 }}>
-                {business.reviews.map((item, index) => (
+                {business.reviews?.map((item, index) => (
                     <View key={index} style={{
                         flexDirection: 'row',
                         alignItems: 'center',
                         marginBottom: 10,
-                        gap:10,
-                        borderWidth:1,
-                        borderColor:Colors.GREY,
-                        borderRadius:12
+                        gap: 10,
+                        borderWidth: 1,
+                        borderColor: Colors.GREY,
+                        borderRadius: 12,
+                        padding: 10 // Added padding for better layout
                     }}>
                         <Image
                             source={{ uri: item.userImage }}
@@ -94,27 +94,28 @@ export default function Review({ business }) {
                                 width: 50,
                                 height: 50,
                                 borderRadius: 25,
-                                marginRight: 5,
-                                marginLeft:5
+                                marginRight: 10 // Added margin for better layout
                             }}
                         />
-                        <View style={{ display:'flex',
-                        gap:5
-
-
-                         }}>
-                            <Text style={{ fontFamily: 'outfit',
-                                fontFamily:'outfit-medium'
-                             }}>
-                                {item.userName}</Text>
+                        <View style={{
+                            display: 'flex',
+                            gap: 5
+                        }}>
+                            <Text style={{
+                                fontFamily: 'outfit-medium',
+                                fontSize: 16 // Added font size for better readability
+                            }}>
+                                {item.userName}
+                            </Text>
                             <Rating
-                            imageSize={20}
-                            ratingCount={item.rating}
-                            style={{alignItems:"flex-start"}}
+                                imageSize={20}
+                                startingValue={item.rating} // Use startingValue to set rating
+                                readonly // Make it readonly
+                                style={{ alignItems: "flex-start" }}
                             />
-
                             <Text style={{ fontFamily: 'outfit' }}>
-                                {item.comment}</Text>
+                                {item.comment}
+                            </Text>
                         </View>
                     </View>
                 ))}
