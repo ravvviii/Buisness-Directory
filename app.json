@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "buisness-directory",
-    "slug": "buisness-directory",
+    "name": "Fataak",
+    "slug": "Fataak",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ravvviii.buisnessdirectory"
     },
     "web": {
       "bundler": "metro",
@@ -34,8 +35,18 @@
     },
     "extra": {
       "router": {
+        "origin": false,
         "pages": "./app"
+      },
+      "eas": {
+        "projectId": "5600fe01-152e-4d7f-ba64-cb321b6ebd74"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/5600fe01-152e-4d7f-ba64-cb321b6ebd74"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/constants/Colors'; // Importing Colors from your constants file
 import { useOAuth } from '@clerk/clerk-expo';
 import * as WebBrowser from "expo-web-browser";
 import React from 'react';
@@ -19,7 +19,7 @@ export default function LoginScreen() {
       if (createdSessionId) {
         setActive({ session: createdSessionId });
       } else {
-        // Use signIn or signUp for next steps such as MFA
+       
       }
     } catch (err) {
       console.error("OAuth error", err);
@@ -48,6 +48,17 @@ export default function LoginScreen() {
             Let's Get Started
           </Text>
         </TouchableOpacity>
+
+        <Text style={{
+          fontSize: 16,
+          fontFamily: 'outfit',
+          textAlign: 'center',
+          marginVertical: 15,
+          color: Colors.GREY,
+          // marginTop:-2
+        }}>
+          Made by RAVVVIII
+        </Text>
       </View>
     </View>
   );
@@ -109,3 +120,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+

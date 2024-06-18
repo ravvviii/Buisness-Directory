@@ -27,6 +27,8 @@ export default function Explore() {
       console.error("Error getting documents: ", error);
     }
   };
+  console.disableYellowBox = true;
+
 
   return (
     <View style={{ padding: 27 }}>

@@ -1,6 +1,6 @@
 import { useAuth } from '@clerk/clerk-expo';
 import React from 'react';
-import { FlatList, Image, Share, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, Linking, Share, Text, TouchableOpacity, View } from 'react-native';
 import { Colors } from '../../constants/Colors';
 
 export default function MenuList() {
@@ -32,6 +32,11 @@ export default function MenuList() {
             path: 'logout'
         },
     ];
+
+    const handlePresss = () => {
+        Linking.openURL('https://www.linkedin.com/in/ravi-shankar-singh-ravvviii/');
+    };
+
 
     const handlePress = (path) => {
         if (path === 'logout') {
@@ -95,7 +100,9 @@ export default function MenuList() {
                 textAlign: "center",
                 marginTop: 100,
                 color: Colors.PRIMARY,
-            }}>Developed with 💖 by RAVVVIII </Text>
+            }}
+            onPress={handlePresss}
+            >Developed with 💖 by RAVVVIII </Text>
         </View>
     );
 }

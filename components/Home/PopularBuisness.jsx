@@ -1,6 +1,6 @@
 import { collection, getDocs, limit, query } from 'firebase/firestore'; // Assuming you are using Firestore
 import React, { useEffect, useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { Alert, FlatList, Text, View } from 'react-native';
 import { Colors } from '../../constants/Colors';
  // Update the path to your Firestore config
 import { db } from '../../configs/FirebaseConfig';
@@ -17,11 +17,12 @@ export default function PopularBusiness() {
       const q = query(collection(db, 'BuisnessList'), limit(10));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
+        // console.log(doc.data());r
         setBuisnessList(prev=>[...prev, {id:doc.id, ... doc.data()}])
       });
     } catch (error) {
-      console.error("Error fetching business list: ", error);
+      // console.error("Error fetching business list: ", error);
+      Alert.alert('Error fetching business list: ')
     }
   };
 

@@ -1,6 +1,6 @@
 import { collection, getDocs, query } from 'firebase/firestore'; // Add getDocs import
 import React, { useEffect, useState } from 'react';
-import { FlatList, Image, Text, View } from 'react-native';
+import { Alert, FlatList, Image, Text, View } from 'react-native';
 import { db } from '../../configs/FirebaseConfig';
 
 export default function Slider() {
@@ -14,16 +14,18 @@ export default function Slider() {
       const querySnapshot = await getDocs(q);
 
       if (querySnapshot.empty) {
-        console.log('No matching documents.');
+        // console.log('No matching documents.');
+        Alert.alert('No matching documents.')
         return;
       }
-
+      
       querySnapshot.forEach((doc) => {
-        console.log(doc.id, ' => ', doc.data());
+        // console.log(doc.id, ' => ', doc.data());
         setSliderList(perv=>[...perv, doc.data()]);
       });
     } catch (error) {
-      console.error('Error fetching documents: ', error);
+      // console.error('Error fetching documents: ', error);
+      Alert.alert('Error fetching documents:')
     }
   };
 

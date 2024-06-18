@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { collection, getDocs, query } from 'firebase/firestore'; // Import necessary Firestore functions
 import React, { useEffect, useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { Alert, FlatList, Text, View } from 'react-native';
 import { db } from '../../configs/FirebaseConfig'; // Import the Firestore database instance
 import { Colors } from '../../constants/Colors';
 import CategoryItem from './CategoryItem';
@@ -21,11 +21,12 @@ export default function Category({explore=false,onCategorySelect}) {
             const querySnapshot = await getDocs(q); // Retrieve all documents in the 'Category' collection
 
             querySnapshot.forEach((doc) => {
-                console.log(doc.data());
+                // console.log(doc.data());
                 setCategoryList(prev=>[...prev, doc.data()])
             });
         } catch (error) {
-            console.error('Error fetching category documents: ', error);
+            // console.error('Error fetching category documents: ', error);
+            Alert.alert('Error fetching category documents:')
         }
     }
 

@@ -35,7 +35,7 @@ export default function ActionButton({ business }) {
     if (item.name === 'Share') {
       // Define share functionality here
       Share.share({
-        message: business?.Name+"\n Address: "+business.Address+" \n Find more details onn buisness-directory app made from 💗 by Ravvviii "
+        message: business?.Name + "\n Address: " + business.Address + " \n Find more details onn buisness-directory app made from 💗 by Ravvviii "
       })
       return;
     }
@@ -47,11 +47,10 @@ export default function ActionButton({ business }) {
   return (
     <View style={{
       borderColor: "#fff",
-      backgroundColor:"#FFF",
+      backgroundColor: "#FFF",
       padding: 20,
     }}>
       <FlatList
-      
         numColumns={4}
         columnWrapperStyle={{ justifyContent: 'space-between' }}
         data={actionButtonMenu}
@@ -64,7 +63,6 @@ export default function ActionButton({ business }) {
               style={{
                 width: 50,
                 height: 50,
-                
               }}
             />
             <Text style={{

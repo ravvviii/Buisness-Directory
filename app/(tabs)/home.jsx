@@ -6,6 +6,8 @@ import PopularBuisness from '../../components/Home/PopularBuisness'
 import Slider from '../../components/Home/Slider'
 
 const home = () => {
+  console.disableYellowBox = true;
+
   return (
   
       <ScrollView>
