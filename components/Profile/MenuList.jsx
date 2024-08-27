@@ -102,7 +102,7 @@ export default function MenuList() {
                 color: Colors.PRIMARY,
             }}
             onPress={handlePresss}
-            >Developed with 💖 by RAVVVIII </Text>
+            >DaVinchi debuggers </Text>
         </View>
     );
 }

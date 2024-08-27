@@ -29,13 +29,13 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={require('../assets/images/loginpageimage.jpg')} style={styles.image} />
+        <Image source={require('../assets/images/farmer.jpg')} style={styles.image} />
       </View>
 
       <View style={styles.subContainer}>
         <Text style={styles.mainText}>
-          Your Ultimate
-          <Text style={styles.highlightedText}> Community Business Directory </Text>
+          Direct Connect with 
+          <Text style={styles.highlightedText}> Farmer </Text>
           App
         </Text>
 
@@ -45,7 +45,12 @@ export default function LoginScreen() {
 
         <TouchableOpacity style={styles.button} onPress={onPress}>
           <Text style={styles.buttonText}>
-            Let's Get Started
+            Login as Farmer
+          </Text>
+        </TouchableOpacity> 
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+          <Text style={styles.buttonText}>
+            Login as Retailer/Customer 
           </Text>
         </TouchableOpacity>
 
@@ -57,7 +62,7 @@ export default function LoginScreen() {
           color: Colors.GREY,
           // marginTop:-2
         }}>
-          Made by RAVVVIII
+          DaVinchi debuggers
         </Text>
       </View>
     </View>
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   image: {
-    width: 220,
+        width: 220,
     height: 380, // Adjusted height to be proportional and fit the screen better
     borderRadius: 20,
   },
