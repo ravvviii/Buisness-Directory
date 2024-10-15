@@ -29,7 +29,7 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={require('../assets/images/farmer.jpg')} style={styles.image} />
+        <Image source={require('../assets/images/loginpageimage.jpg')} style={styles.image} />
       </View>
 
       <View style={styles.subContainer}>
@@ -43,14 +43,11 @@ export default function LoginScreen() {
           Find your favorite business near you and post your own business
         </Text>
 
+       
         <TouchableOpacity style={styles.button} onPress={onPress}>
           <Text style={styles.buttonText}>
-            Login as Farmer
-          </Text>
-        </TouchableOpacity> 
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-          <Text style={styles.buttonText}>
-            Login as Retailer/Customer 
+            Login 
+            
           </Text>
         </TouchableOpacity>
 
@@ -62,7 +59,7 @@ export default function LoginScreen() {
           color: Colors.GREY,
           // marginTop:-2
         }}>
-          DaVinchi debuggers
+          A <Text style={{color:'red'}}>ravvviii</Text> product
         </Text>
       </View>
     </View>

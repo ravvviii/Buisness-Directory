@@ -102,7 +102,7 @@ export default function MenuList() {
                 color: Colors.PRIMARY,
             }}
             onPress={handlePresss}
-            >DaVinchi debuggers </Text>
+            >A <Text style={{color:'red'}}>ravvviii</Text> product  </Text>
         </View>
     );
 }
