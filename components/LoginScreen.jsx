@@ -35,7 +35,7 @@ export default function LoginScreen() {
       <View style={styles.subContainer}>
         <Text style={styles.mainText}>
           Direct Connect with 
-          <Text style={styles.highlightedText}> Farmer </Text>
+          <Text style={styles.highlightedText}> Buisness </Text>
           App
         </Text>
 
